@@ -15,5 +15,3 @@ editing, so that the imports work as expected
 
 To view more detailled documentation, build the doc as mentioned above and look at the `docs/build/html/index.html` file. Start reading the `Getting started` section.
 
-
-# SmartBuilding

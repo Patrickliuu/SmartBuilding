@@ -1,0 +1,39 @@
+# Setup instructions for the Conda environment.
+# To create the environment, run `conda env create -f environment.yml`
+# To activate this environment, run `conda activate SmartBuilding`
+# To update an existing environment, run `conda env update --name SmartBuilding --file environment.yml`
+# maybe run `conda update --all` to let Conda attempt to resolve any potential inconsistencies in the environment after installing using pip.
+
+name: SmartBuilding
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python
+  - pip
+  - pandas
+  - ipykernel
+  - pathlib
+  - pendulum
+  - python-dotenv>=0.5.1
+  #- sqlalchemy  # for MariaDB: also requires mariadb, which is not available in conda-forge, so install via pip
+  - PyMySQL     # for mySQL
+  - matplotlib
+  - bokeh>=3.3.1
+  - selenium
+  - pyarrow     # for parquet and feather file formats
+  - statsmodels
+  #- multidict  # for lida
+
+  # external requirements (by cookiecutter data science template)
+  # - Sphinx
+  # - nbsphinx  # for sphinx to be able to render jupyter notebooks
+  # - pandoc    # for nbsphinx to be able to convert jupyter notebooks to markdown
+  # - myst-parser  # for sphinx to be able to render markdown in addition to reStructuredText
+  # - coverage
+  # - flake8
+
+  - pip:
+    - -e .  # this is equivalent to `pip install -e .` and installs the package in editable mode
+    #- mariadb  # for MariaDB: not available in conda-forge, so install via pip
+    #- lida
